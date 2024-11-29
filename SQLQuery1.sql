@@ -277,3 +277,34 @@ VALUES
 (2, 3, '1 cápsula', 'Cada 6 horas'),
 (3, 4, '10 ml', 'Una vez al día'),
 (4, 5, '20 mg', 'Cada 24 horas');
+
+select * from Sala;
+EXEC sp_rename 'Sala.tipo_sala', 'estado_sala', 'COLUMN';
+INSERT INTO Sala (id_sala, id_sede, estado_sala) 
+VALUES 
+(1, 1, 'disponible'),
+(2, 1, 'ocupada'),
+(3, 1, 'disponible'),
+(4, 1, 'ocupada'),
+(5, 1, 'disponible'),
+(6, 1, 'ocupada'),
+(7, 1, 'disponible'),
+(8, 1, 'ocupada'),
+(9, 1, 'disponible'),
+(10, 1, 'ocupada');
+
+INSERT INTO Sala_operaciones (id_sala, sala_esteril) 
+VALUES 
+(3, 1),  
+(5, 0),  
+(10, 0),  
+(1, 0),  
+(8, 1); 
+
+INSERT INTO Sala_consulta (id_sala, tipo_Consulta) 
+VALUES 
+(2, 'General'),     
+(4, 'Urgencias'),  
+(6, 'Pediatría'),  
+(7, 'Urgencias'),  
+(9, 'Cirugía'); 
