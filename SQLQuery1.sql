@@ -171,3 +171,12 @@ CREATE TABLE Emergencia (
     motivo varchar(50) not null,
     FOREIGN KEY (id_actividad_medica) REFERENCES Actividad_Medica(id_actividad_medica)
 );
+
+
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (1, '12345678', 65.50);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (2, '87654321', 72.30);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (3, '11223344', 80.25);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (4, '44332211', 58.40);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (5, '99887766', 90.00);
+INSERT INTO Sedes (id_sede, ubicacion_sede, distrito, departamento) 
+VALUES (1, 'Av. Gregorio Escobedo 783', 'Jesus Maria', 'Lima');
