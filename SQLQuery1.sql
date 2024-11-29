@@ -180,3 +180,18 @@ INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (4, '44332211', 58.40);
 INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (5, '99887766', 90.00);
 INSERT INTO Sedes (id_sede, ubicacion_sede, distrito, departamento) 
 VALUES (1, 'Av. Gregorio Escobedo 783', 'Jesus Maria', 'Lima');
+
+INSERT INTO datos_personales (DNI, Nombre, fecha_nacimiento, Telefono) 
+VALUES ('12345678', 'Juan Pérez', '1985-05-12', '987654321');
+
+INSERT INTO datos_personales (DNI, Nombre, fecha_nacimiento, Telefono) 
+VALUES ('87654321', 'María Gómez', '1992-11-23', '912345678');
+
+INSERT INTO datos_personales (DNI, Nombre, fecha_nacimiento, Telefono) 
+VALUES ('11223344', 'Carlos Fernández', '1978-03-09', '998877665');
+
+INSERT INTO datos_personales (DNI, Nombre, fecha_nacimiento, Telefono) 
+VALUES ('44332211', 'Ana Martínez', '2000-07-15', '934567890');
+
+INSERT INTO datos_personales (DNI, Nombre, fecha_nacimiento, Telefono) 
+VALUES ('99887766', 'Luisa Castro', '1989-02-27', '911223344');
