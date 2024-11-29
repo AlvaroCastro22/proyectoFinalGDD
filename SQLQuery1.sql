@@ -195,3 +195,51 @@ VALUES ('44332211', 'Ana Martínez', '2000-07-15', '934567890');
 
 INSERT INTO datos_personales (DNI, Nombre, fecha_nacimiento, Telefono) 
 VALUES ('99887766', 'Luisa Castro', '1989-02-27', '911223344');
+
+INSERT INTO Historial_Clinico (id_Historial, id_Paciente, fecha_inicio) 
+VALUES (1, 1, '2023-01-15');
+
+INSERT INTO Historial_Clinico (id_Historial, id_Paciente, fecha_inicio) 
+VALUES (2, 2, '2022-06-10');
+
+INSERT INTO Historial_Clinico (id_Historial, id_Paciente, fecha_inicio) 
+VALUES (3, 3, '2021-11-20');
+
+INSERT INTO Historial_Clinico (id_Historial, id_Paciente, fecha_inicio) 
+VALUES (4, 4, '2020-08-05');
+
+INSERT INTO Historial_Clinico (id_Historial, id_Paciente, fecha_inicio) 
+VALUES (5, 5, '2019-04-12');
+
+INSERT INTO Analisis_Laboratorio (id_analisis, fecha_de_prueba, tipo_de_examen, fecha_envio_resultados, estado) 
+VALUES (1, '2024-11-01', 'Hemograma completo', '2024-11-05', 'Completado');
+
+INSERT INTO Analisis_Laboratorio (id_analisis, fecha_de_prueba, tipo_de_examen, fecha_envio_resultados, estado) 
+VALUES (2, '2024-11-10', 'Perfil lipídico', '2024-11-15', 'Completado');
+
+INSERT INTO Analisis_Laboratorio (id_analisis, fecha_de_prueba, tipo_de_examen, fecha_envio_resultados, estado) 
+VALUES (3, '2024-11-20', 'Prueba de glucosa', NULL, 'Pendiente');
+
+INSERT INTO Analisis_Laboratorio (id_analisis, fecha_de_prueba, tipo_de_examen, fecha_envio_resultados, estado) 
+VALUES (4, '2024-11-25', 'Función hepática', NULL, 'En Proceso');
+
+INSERT INTO Analisis_Laboratorio (id_analisis, fecha_de_prueba, tipo_de_examen, fecha_envio_resultados, estado) 
+VALUES (5, '2024-10-30', 'Examen de orina', '2024-11-02', 'Completado');
+
+INSERT INTO Informe_Medico (id_informe, id_analisis, id_Historial, descripcion) 
+VALUES (1, 1, 1, 'Hemograma completo muestra valores normales.');
+
+INSERT INTO Informe_Medico (id_informe, id_analisis, id_Historial, descripcion) 
+VALUES (2, 2, 2, 'Perfil lipídico indica niveles elevados de colesterol.');
+
+INSERT INTO Informe_Medico (id_informe, id_analisis, id_Historial, descripcion) 
+VALUES (3, 3, 3, 'Prueba de glucosa aún pendiente de resultados.');
+
+INSERT INTO Informe_Medico (id_informe, id_analisis, id_Historial, descripcion) 
+VALUES (4, 4, 4, 'Función hepática presenta indicadores dentro del rango normal.');
+
+INSERT INTO Informe_Medico (id_informe, id_analisis, id_Historial, descripcion) 
+VALUES (5, 5, 5, 'Examen de orina muestra rastros de infección.');
+
+
+
