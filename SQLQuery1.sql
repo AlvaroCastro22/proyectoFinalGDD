@@ -241,5 +241,39 @@ VALUES (4, 4, 4, 'Función hepática presenta indicadores dentro del rango normal.
 INSERT INTO Informe_Medico (id_informe, id_analisis, id_Historial, descripcion) 
 VALUES (5, 5, 5, 'Examen de orina muestra rastros de infección.');
 
+INSERT INTO Factura (id_Factura, estado_factura, costo_por_servicio, fecha_emision, id_informe, id_Paciente) 
+VALUES 
+(1, 'Pagado', 250, '2024-11-01', 1, 1),
+(2, 'Pendiente', 400, '2024-11-05', 2, 2),
+(3, 'Pagado', 300, '2024-11-10', 3, 3),
+(4, 'Pagado', 150, '2024-11-15', 4, 4),
+(5, 'Pendiente', 500, '2024-11-20', 5, 5);
 
+INSERT INTO Receta_Medica (id_receta, id_informe, fecha_emision) 
+VALUES 
+(1, 1, '2024-11-02'),
+(2, 2, '2024-11-06'),
+(3, 3, '2024-11-11'),
+(4, 4, '2024-11-16'),
+(5, 5, '2024-11-21');
 
+INSERT INTO Medicamento (id_medicamento, nombre_medicamento, descripcion, stock) 
+VALUES 
+(1, 'Paracetamol', 'Alivia el dolor y reduce la fiebre', 50),
+(2, 'Ibuprofeno', 'Antiinflamatorio y analgésico', 30),
+(3, 'Amoxicilina', 'Antibiótico de amplio espectro', 20),
+(4, 'Loratadina', 'Antihistamínico para alergias', 15),
+(5, 'Omeprazol', 'Protector gástrico para acidez', 40),
+(6, 'Metformina', 'Tratamiento para la diabetes tipo 2', 25),
+(7, 'Aspirina', 'Reduce dolor, fiebre e inflamación', 60),
+(8, 'Clorfenamina', 'Alivia síntomas de alergias', 10),
+(9, 'Salbutamol', 'Broncodilatador para el asma', 35),
+(10, 'Ciprofloxacino', 'Antibiótico para infecciones bacterianas', 18);
+
+INSERT INTO Detalles_Receta (id_receta, id_medicamento, dosis, frecuencia) 
+VALUES 
+(1, 1, '500 mg', 'Cada 8 horas'),
+(1, 2, '200 mg', 'Cada 12 horas'),
+(2, 3, '1 cápsula', 'Cada 6 horas'),
+(3, 4, '10 ml', 'Una vez al día'),
+(4, 5, '20 mg', 'Cada 24 horas');
