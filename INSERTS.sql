@@ -4,11 +4,13 @@ use pruebaTrabajo;
 
 EXEC sp_rename 'Sala.tipo_sala', 'estado_sala', 'COLUMN';
 
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (1, '12345678', 65.50);
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (2, '87654321', 72.30);
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (3, '11223344', 80.25);
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (4, '44332211', 58.40);
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (5, '99887766', 90.00);
+INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (1, '12345678', 65.50,1.75);
+INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (2, '87654321', 72.30,1.70);
+INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (3, '11223344', 80.25,1.54);
+INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (4, '44332211', 58.40,1.68);
+INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (5, '99887766', 90.00,1.71);
+
+INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (6, '99811766', 60.00,1.57);
 INSERT INTO Sedes (id_sede, ubicacion_sede, distrito, departamento) 
 VALUES (1, 'Av. Gregorio Escobedo 783', 'Jesus Maria', 'Lima');
 
@@ -203,3 +205,4 @@ VALUES
 select * from Equipo_medico;
 select * from Actividad_Medica;
 select * from AsignacionEnfermeroEquipo;
+select * from Paciente;
