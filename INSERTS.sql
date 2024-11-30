@@ -149,7 +149,7 @@ VALUES
 (5, 'Dr. José Martínez', 'Traumatología', 'M56789', 'Especialidad'),
 (6, 'Dra. Ana López', 'Oncología', 'M67890', 'Maestría');
 
-INSERT INTO Enfermera (id_enfermero, nombre_enfermera, especialidad, colegiatura, grado_estudios) 
+INSERT INTO Enfermero (id_enfermero, nombre_enfermera, especialidad, colegiatura, grado_estudios) 
 VALUES 
 (1, 'Ana García', 'Pediatría', 'E12345', 'Licenciatura'),
 (2, 'Carlos López', 'Quirófano', 'E23456', 'Licenciatura'),
@@ -157,3 +157,46 @@ VALUES
 (4, 'Juan Pérez', 'Rehabilitación', 'E45678', 'Técnico'),
 (5, 'Marta Sánchez', 'Oncología', 'E56789', 'Licenciatura'),
 (6, 'Elena Rodríguez', 'Cuidados Intensivos', 'E67890', 'Maestría');
+
+
+INSERT INTO Equipo_medico (id_Equipo, turno_trabajo, fecha_formacion)
+VALUES
+(1, 'Mañana', '2023-01-15'),
+(2, 'Tarde', '2022-07-10'),
+(3, 'Noche', '2021-03-05');
+
+INSERT INTO AsignacionMedicoEquipo (id_equipo_medico, id_medico)
+VALUES
+(1, 1), 
+(1, 2), 
+(2, 3), 
+(2, 4), 
+(3, 5), 
+(3, 6); 
+INSERT INTO AsignacionEnfermeroEquipo (id_equipo_medico, id_enfermero)
+VALUES
+(1, 6), 
+(1, 5), 
+(2, 4), 
+(2, 3), 
+(3, 2), 
+(3, 1); 
+
+INSERT INTO Actividad_Medica (id_actividad_medica, id_Paciente, id_Sala, id_Informe, fecha, hora, idEquipo)
+VALUES
+(1, 1, 1, 1, '2024-11-28', '08:00:00', 1), 
+(2, 2, 2, 2, '2024-11-28', '09:30:00', 1), 
+(3, 3, 3, 3, '2024-11-29', '10:15:00', 2), 
+(4, 4, 4, 4, '2024-11-29', '11:45:00', 2), 
+(5, 5, 5, 5, '2024-11-30', '14:00:00', 3);
+INSERT INTO Cita (id_actividad_medica, especialidad)
+VALUES
+(1, 'Cardiología'),  
+(2, 'Pediatría');    
+INSERT INTO Operacion (id_actividad_medica, tipo_cirugia, duracion)
+VALUES
+(3, 'Cirugía laparoscópica', '02:30:00'),
+(4, 'Apéndicectomía', '01:45:00');   
+INSERT INTO Emergencia (id_actividad_medica, motivo)
+VALUES
+(5, 'Traumatismo craneal');
