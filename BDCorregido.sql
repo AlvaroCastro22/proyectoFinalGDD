@@ -115,7 +115,8 @@ CREATE TABLE Medico (
 );
 
 
-CREATE TABLE Enfermera (
+
+CREATE TABLE Enfermero (
     id_enfermero INT PRIMARY KEY,  -- Primary Key
     nombre_enfermera VARCHAR(100) not null,
     especialidad VARCHAR(100) not null,
@@ -138,12 +139,47 @@ CREATE TABLE AsignacionMedicoEquipo (
     CONSTRAINT FK_AsignacionMedicoEquipo_Medico FOREIGN KEY (id_medico) 
     REFERENCES Medico(id_medico)
 );
-CREATE TABLE AsignacionMedicoEquipo (
+CREATE TABLE AsignacionEnfermeroEquipo (
     id_equipo_medico INT, 
     id_enfermero INT,
-    PRIMARY KEY (id_equipo_medico, id_medico),
-    CONSTRAINT FK_AsignacionMedicoEquipo_EquipoMedico FOREIGN KEY (id_equipo_medico) 
+    PRIMARY KEY (id_equipo_medico, id_enfermero),
+    CONSTRAINT FK_AsignacionEnfermeroEquipo_EquipoMedico FOREIGN KEY (id_equipo_medico) 
     REFERENCES Equipo_medico(id_Equipo),
-    CONSTRAINT FK_AsignacionMedicoEquipo_Medico FOREIGN KEY (id_medico) 
-    REFERENCES Medico(id_medico)
+    CONSTRAINT FK_AsignacionEnfermeroEquipo_Medico FOREIGN KEY (id_enfermero) 
+    REFERENCES Enfermero(id_enfermero)
+);
+CREATE TABLE Actividad_Medica (
+    id_actividad_medica INT PRIMARY KEY,  -- Primary Key
+    id_Paciente INT,  -- Foreign Key
+	id_Sala INT, --Foreign Key
+	id_Informe int,
+    fecha DATE,
+    hora TIME,
+	idEquipo int not null
+	CONSTRAINT FK_Actividad_Medica_Informe Foreign key (id_Informe) references Informe_Medico(id_Informe),
+    CONSTRAINT FK_Actividad_Medica_Paciente FOREIGN KEY (id_Paciente) REFERENCES Paciente(id_Paciente),
+	CONSTRAINT FK_Actividad_Medica_Sala Foreign key (id_Sala) REFERENCES Sala(id_Sala),
+	foreign key(idEquipo) references Equipo_medico(id_Equipo)
+);
+
+CREATE TABLE Cita (
+    id_actividad_medica INT PRIMARY KEY,  -- Primary Key
+    
+    especialidad VARCHAR(100) not null,
+    FOREIGN KEY (id_actividad_medica) REFERENCES Actividad_Medica(id_actividad_medica)
+);
+
+
+CREATE TABLE Operacion (
+    id_actividad_medica INT PRIMARY KEY,  -- Primary Key
+    
+    tipo_cirugia VARCHAR(100) not null,
+    duracion TIME null,
+    FOREIGN KEY (id_actividad_medica) REFERENCES Actividad_Medica(id_actividad_medica)
+);
+
+CREATE TABLE Emergencia (
+    id_actividad_medica INT PRIMARY KEY,  -- Primary Key
+    motivo varchar(50) not null,
+    FOREIGN KEY (id_actividad_medica) REFERENCES Actividad_Medica(id_actividad_medica)
 );
