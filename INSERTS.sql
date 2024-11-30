@@ -10,10 +10,9 @@ INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (3, '11223344', 80.2
 INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (4, '44332211', 58.40,1.68);
 INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (5, '99887766', 90.00,1.71);
 
-INSERT INTO Paciente (id_Paciente, DNI, peso,altura) VALUES (6, '99811766', 60.00,1.57);
 INSERT INTO Sedes (id_sede, ubicacion_sede, distrito, departamento) 
 VALUES (1, 'Av. Gregorio Escobedo 783', 'Jesus Maria', 'Lima');
-
+select * from Paciente;
 INSERT INTO datos_personales (DNI, Nombre, fecha_nacimiento, Telefono) 
 VALUES ('12345678', 'Juan Pérez', '1985-05-12', '987654321');
 
