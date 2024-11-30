@@ -200,3 +200,6 @@ VALUES
 INSERT INTO Emergencia (id_actividad_medica, motivo)
 VALUES
 (5, 'Traumatismo craneal');
+select * from Equipo_medico;
+select * from Actividad_Medica;
+select * from AsignacionEnfermeroEquipo;

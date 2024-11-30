@@ -9,6 +9,8 @@ BEGIN
     WHERE   DNI = @DNI;
 END;
 
+select * from datos_personales;
+
 CREATE PROCEDURE ActualizarTelefono
     @DNI VARCHAR(8),
     @nuevo_telefono VARCHAR(15)

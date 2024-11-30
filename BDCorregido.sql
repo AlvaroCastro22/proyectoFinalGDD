@@ -5,6 +5,7 @@ create table Paciente(
 id_Paciente INT,
 DNI varchar(8),
 peso DECIMAL(5,2),
+altura DECIMAL(3,2),
 primary key (id_Paciente,DNI),
 CONSTRAINT UQ_DNI UNIQUE (DNI),
 CONSTRAINT UQ_Id UNIQUE (id_Paciente)

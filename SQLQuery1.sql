@@ -2,6 +2,7 @@ create table Paciente(
 id_Paciente INT,
 DNI varchar(8),
 peso DECIMAL(5,2),
+altura DECIMAL(3,2),
 primary key (id_Paciente,DNI),
 CONSTRAINT UQ_DNI UNIQUE (DNI),
 CONSTRAINT UQ_Id UNIQUE (id_Paciente)
@@ -173,11 +174,11 @@ CREATE TABLE Emergencia (
 );
 
 
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (1, '12345678', 65.50);
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (2, '87654321', 72.30);
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (3, '11223344', 80.25);
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (4, '44332211', 58.40);
-INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (5, '99887766', 90.00);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (1, '12345678', 65.50,1.75);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (2, '87654321', 72.30,1.80);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (3, '11223344', 80.25,1.53);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (4, '44332211', 58.40,1.75);
+INSERT INTO Paciente (id_Paciente, DNI, peso) VALUES (5, '99887766', 90.00,1.73);
 INSERT INTO Sedes (id_sede, ubicacion_sede, distrito, departamento) 
 VALUES (1, 'Av. Gregorio Escobedo 783', 'Jesus Maria', 'Lima');
 
@@ -308,3 +309,23 @@ VALUES
 (6, 'Pediatría'),  
 (7, 'Urgencias'),  
 (9, 'Cirugía'); 
+
+
+INSERT INTO Medico (id_medico, nombre_medico, especialidad, colegiatura, grado_estudios) 
+VALUES 
+(1, 'Dr. Luis Fernández', 'Cardiología', 'M12345', 'Licenciatura'),
+(2, 'Dra. Marta Gómez', 'Cirugía', 'M23456', 'Licenciatura'),
+(3, 'Dr. Roberto Pérez', 'Neurología', 'M34567', 'Maestría'),
+(4, 'Dra. Patricia Ruiz', 'Pediatría', 'M45678', 'Licenciatura'),
+(5, 'Dr. José Martínez', 'Traumatología', 'M56789', 'Especialidad'),
+(6, 'Dra. Ana López', 'Oncología', 'M67890', 'Maestría');
+
+INSERT INTO Enfermera (id_enfermero, nombre_enfermera, especialidad, colegiatura, grado_estudios) 
+VALUES 
+(1, 'Ana García', 'Pediatría', 'E12345', 'Licenciatura'),
+(2, 'Carlos López', 'Quirófano', 'E23456', 'Licenciatura'),
+(3, 'Laura Martínez', 'Urgencias', 'E34567', 'Licenciatura'),
+(4, 'Juan Pérez', 'Rehabilitación', 'E45678', 'Técnico'),
+(5, 'Marta Sánchez', 'Oncología', 'E56789', 'Licenciatura'),
+(6, 'Elena Rodríguez', 'Cuidados Intensivos', 'E67890', 'Maestría');
+
